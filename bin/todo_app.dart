@@ -45,7 +45,7 @@ void addCommand(TodoRepository repo, String input) {
 
 void listCommand(TodoRepository repo) {
     List<Todo> todos = repo.getAll();
-    if (todos.isEmpty()) {
+    if (todos.isEmpty) { // <-- убраны скобки (), так как isEmpty - геттер
       print("Список задач пуст");
       return;
     }
@@ -96,9 +96,9 @@ bool handleCommand(TodoRepository repo, String input) {
           return true;
         default:
           print("Неизвестная команда");
-      } catch (e) {
-        print("Ошибка: $e");
       }
-      return false;
-      }
+    } catch (e) { 
+      print("Ошибка: $e");
+    }
+    return false;
 }

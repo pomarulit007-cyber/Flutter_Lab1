@@ -15,7 +15,7 @@ class Todo {
 
   @override
   String toString() {
-    String status
+    String status;
     if (isDone) {
       status = "[x]";
     } else {

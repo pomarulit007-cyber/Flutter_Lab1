@@ -1,15 +1,12 @@
 import 'todo.dart';
 
-int calculate() {
-  return 6 * 7;
-}
-
 class TodoRepository {
   final List<Todo> _todos = [];
 
   List<Todo> getAll() {
     return _todos;
   }
+
   void add(String title) {
     if (title.trim().isEmpty) {
       throw ArgumentError("Название задачи не может быть пустым");
@@ -17,6 +14,7 @@ class TodoRepository {
     Todo todo = Todo(title.trim());
     _todos.add(todo);
   }
+
   void complete(int id) {
     for (var todo in _todos) {
       if (todo.id == id) {
@@ -26,6 +24,7 @@ class TodoRepository {
     }
     throw ArgumentError("Задача с id $id не найдена");
   }
+
   void delete(int id) {
     for (int i = 0; i < _todos.length; i++) {
       if (_todos[i].id == id) {
